@@ -32,16 +32,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:text="Made just for you and  your friends in your college. No outsiders allowed."
+            android:text="Made just for you and  your friends in your college.\n What happens in campus , stays in campus."
             android:textAlignment="center"
             android:textColor="@android:color/white" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is a location based service and is accesible only from college of engineering roorkee."
-            android:textAlignment="center"
-            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
