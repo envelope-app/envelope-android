@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4dd0e1</color>
+    <color name="colorPrimaryDark">#26a69a</color>
+    <color name="colorAccent">#eeff41</color>
+
+    <!--bg colors-->
+    <color name="color1">#222222</color>
+    <color name="color2">#43AA8B</color>
+    <color name="color3">#19647E</color>
+    <color name="color4">#EF3054</color>
+
+    <!--dot dark colors-->
+    <color name="dot_dark1">#000000</color>
+    <color name="dot_dark2">#115943</color>
+    <color name="dot_dark3">#053141</color>
+    <color name="dot_dark4">#EF3054</color>
+
+    <!--dot light colors-->
+    <color name="dot_light1">#e3e3e3</color>
+    <color name="dot_light2">#7be3c4</color>
+    <color name="dot_light3">#8bd4ed</color>
+    <color name="dot_light4">#f795a7</color>
+
+    <color name="white_mute">#ebeaea</color>
+
+    <array name="dot_active">
+        <item>@color/dot_dark1</item>
+        <item>@color/dot_dark2</item>
+        <item>@color/dot_dark3</item>
+        <item>@color/dot_dark4</item>
+    </array>
+
+    <array name="dot_inactive">
+        <item>@color/dot_light1</item>
+        <item>@color/dot_light2</item>
+        <item>@color/dot_light3</item>
+        <item>@color/dot_light4</item>
+    </array>
+</resources>
