@@ -1,43 +1,47 @@
 package com.mrinalraj.envelope.intro;
 
-import android.os.Build;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
 
 import com.github.paolorotolo.appintro.AppIntro;
+import com.mrinalraj.envelope.PermissionAccess;
 import com.mrinalraj.envelope.R;
+import com.mrinalraj.envelope.activities.SplashScreen;
 
 public class WalkthroughIntro extends AppIntro {
 
+    Intromanager introman;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if(Build.VERSION.SDK_INT>20){
-            getWindow()
-                    .getDecorView()
-                    .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        introman=new Intromanager(this);
+        if(!introman.isFirst()){
+            startActivity(new Intent(this, SplashScreen.class));
+            finish();
         }
-
         addSlide(IntroSlide.newInstance(R.layout.screen1));
         addSlide(IntroSlide.newInstance(R.layout.screen2));
         addSlide(IntroSlide.newInstance(R.layout.screen3));
         addSlide(IntroSlide.newInstance(R.layout.screen4));
         setFadeAnimation();
+        new PermissionAccess().invoke(this);
     }
 
     @Override
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
+        introman.setFalse(false);
+        startActivity(new Intent(this,SplashScreen.class));
         finish();
     }
 
     @Override
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
+        introman.setFalse(false);
+        startActivity(new Intent(this,SplashScreen.class));
         finish();
     }
 
@@ -45,4 +49,5 @@ public class WalkthroughIntro extends AppIntro {
     public void onSlideChanged(@Nullable Fragment oldFragment, @Nullable Fragment newFragment) {
         super.onSlideChanged(oldFragment, newFragment);
     }
+
 }
