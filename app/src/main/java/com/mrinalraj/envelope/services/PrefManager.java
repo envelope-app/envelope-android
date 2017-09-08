@@ -1,21 +1,32 @@
-package com.mrinalraj.envelope.intro;
+package com.mrinalraj.envelope.services;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by mrinal on 8/28/2017.
- */
 
-public class Intromanager {
+public class PrefManager {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     Context c;
 
-    public Intromanager(Context c){
+    public PrefManager(Context c){
         this.c=c;
         pref=c.getSharedPreferences("first",0);
         editor=pref.edit();
+    }
+    public PrefManager(Context c,String prefName){
+        this.c=c;
+        pref=c.getSharedPreferences(prefName,0);
+        editor=pref.edit();
+    }
+
+    public void add(String key,String value){
+        editor.putString(key,value);
+        editor.commit();
+    }
+
+    public String get(String key){
+        return pref.getString(key,"");
     }
 
     public boolean isFirst(){

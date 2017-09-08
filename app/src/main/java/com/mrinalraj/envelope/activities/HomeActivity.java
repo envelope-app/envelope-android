@@ -1,12 +1,10 @@
 package com.mrinalraj.envelope.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.mrinalraj.envelope.R;
-
-import org.w3c.dom.Text;
 
 public class HomeActivity extends AppCompatActivity {
     Bundle b;

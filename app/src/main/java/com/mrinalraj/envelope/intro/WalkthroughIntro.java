@@ -9,18 +9,20 @@ import com.github.paolorotolo.appintro.AppIntro;
 import com.mrinalraj.envelope.PermissionAccess;
 import com.mrinalraj.envelope.R;
 import com.mrinalraj.envelope.activities.SplashScreen;
+import com.mrinalraj.envelope.services.PrefManager;
 
 public class WalkthroughIntro extends AppIntro {
 
-    Intromanager introman;
+    PrefManager introman;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        introman=new Intromanager(this);
+        introman=new PrefManager(this);
         if(!introman.isFirst()){
             startActivity(new Intent(this, SplashScreen.class));
             finish();
         }
+        addSlide(IntroSlide.newInstance(R.layout.screen0));
         addSlide(IntroSlide.newInstance(R.layout.screen1));
         addSlide(IntroSlide.newInstance(R.layout.screen2));
         addSlide(IntroSlide.newInstance(R.layout.screen3));
