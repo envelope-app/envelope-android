@@ -9,7 +9,7 @@ This repository has the code for the Android App
 
 ## SplashScreen
 
-<img src="screenshots/splash-screen.png">
+<img src="screenshots/splash-screen.png" width="100">
 
 ## Contributors
 	
