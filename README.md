@@ -4,10 +4,12 @@ Envelope is a Anonymous Text Posting website for College Students.
 This repository has the code for the Android App
 
 ## Intro screen
-    <img src="screenshots/intro-screen.jpg">
+
+<img src="screenshots/intro-screen.jpg">
 
 ## SplashScreen
-    <img src="screenshots/splash-screen.png">
+
+<img src="screenshots/splash-screen.png">
 
 ## Contributors
 	
