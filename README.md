@@ -5,14 +5,14 @@ This repository has the code for the Android App
 
 ## Intro screen
 
-<img src="screenshots/intro-screen.jpg">
+<img src="screenshots/intro-screen.jpg" height="400">
 
 ## SplashScreen
 
-<img src="screenshots/splash-screen.png" width="100">
+<img src="screenshots/splash-screen.png" height="300">
 
 ## Contributors
 	
 1. Ishan Jain([@ishanjain28](https://github.com/ishanjain28))
 2. Mrinal Raj([@mrinalraj](http://github.com/mrinalraj))
-3. Piyush Bhatt([@piyush01bhatt](https://github.com/Piyush01Bhatt))
+3. Pankaj Dagar

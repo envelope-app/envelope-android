@@ -37,4 +37,10 @@
         <item>@color/dot_light3</item>
         <item>@color/dot_light4</item>
     </array>
+
+
+    <color name="likecount">#4e7cae</color>
+
+    <color name="actionbar">#68bcd9</color>
+    <color name="search_bg_clr">#b6eafb</color>
 </resources>

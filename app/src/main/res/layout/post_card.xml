@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/relativeLayout">
+
+        <!--<ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher"/>
+            -->
+        <TextView
+            android:id="@+id/postid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text=""/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="23:11"
+        android:textSize="9sp"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9 Sep, 2017"
+        android:textSize="9sp"
+        android:layout_alignStart="@+id/time"
+        android:layout_below="@+id/time" />
+
+    <FrameLayout
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/date"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/extendedMenu" >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/postmenu"
+            android:contentDescription="menu"
+            android:rotation="90"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/demopost"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="20dp"
+        android:id="@+id/relativeLayout2"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/dislikescount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 dislikes"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/likecount"
+            android:layout_toEndOf="@+id/likecount"/>
+
+        <TextView
+            android:id="@+id/likecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50 likes"
+            android:textColor="@color/likecount"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/commentscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8 comments"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/likecount"
+            android:layout_toEndOf="@+id/dislikescount"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearmenu"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:weightSum="3">
+        <FrameLayout
+            android:id="@+id/likebtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" android:clickable="true">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/like"
+                android:id="@+id/likeimg"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="Like"/>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/commentbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/comment"
+                android:id="@+id/commentimg"/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="Comment"/>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/dislikebtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="Dislike"/>
+
+            <ImageView
+                android:id="@+id/dislikeimg"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/dislike" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/linearmenu"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/white_mute"/>
+
+</RelativeLayout>

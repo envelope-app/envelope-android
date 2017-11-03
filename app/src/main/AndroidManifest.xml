@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.LOCATION_HARDWARE"/>
     <application
         android:name=".EnvelopeApp"
         android:allowBackup="true"
@@ -29,7 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.HomeActivity"/>
+        <activity android:name=".activities.HomeActivity"
+            android:theme="@style/Fullscreen"
+            />
     </application>
 
 </manifest>

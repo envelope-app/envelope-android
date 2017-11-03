@@ -1,16 +1,13 @@
 package com.mrinalraj.envelope.activities;
 
-import android.content.Context;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.location.LocationListener;
 import com.mrinalraj.envelope.R;
 import com.mrinalraj.envelope.network.RegisterDevice;
 import com.mrinalraj.envelope.services.Coordinates;
@@ -21,7 +18,6 @@ import com.mrinalraj.envelope.services.PrefManager;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.ExecutionException;
 
 public class SplashScreen extends AppCompatActivity {
     private static final String TAG = "Log";
@@ -70,18 +66,23 @@ public class SplashScreen extends AppCompatActivity {
             }
         };
 
-        timer.schedule(timerTask, 0, 2000);
+        timer.schedule(timerTask, 0, 500);
 
         if (ls.canGetLocation()){
             lat=ls.getLatitude();
             lon=ls.getLongitude();
             if (validateLocation(boundry,new Coordinates(lat,lon))){
                 Toast.makeText(this, "Good to go", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,HomeActivity.class));
+                finish();
             }
             else{
                 String devid=GetDeviceID();
-                RegisterDevice registerDevice=new RegisterDevice(this);
-                registerDevice.execute(" ");
+                Toast.makeText(this, devid, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,HomeActivity.class));
+                finish();
+//                RegisterDevice registerDevice=new RegisterDevice(this);
+//                registerDevice.execute(" ");
             }
         }
     }

@@ -32,7 +32,7 @@ public class RegisterDevice extends AsyncTask<String,String,JSONObject> {
     protected JSONObject doInBackground(String... params) {
         JSONCustom jsonCustom=new JSONCustom();
         dev_id=params[0];
-        try{
+        /*try{
             reply=jsonCustom.getJSONObjectFromURL("http://envelope.mrinalraj.com","GET");
             if (hash!=null){
                 err=reply.optString("error");
@@ -46,18 +46,20 @@ public class RegisterDevice extends AsyncTask<String,String,JSONObject> {
         }
         catch(Exception e){
             Log.e("Exception caught",e.toString());
-        }
+        }*/
         return null;
     }
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
-        PrefManager prefMan=new PrefManager(c,"devicekey");
+        /*PrefManager prefMan=new PrefManager(c,"devicekey");
         if (hash!=null){
             prefMan.add(dev_id,hash);
             Intent home=new Intent(c, HomeActivity.class);
             c.startActivity(home);
         }
+        */
+        c.startActivity(new Intent(c,HomeActivity.class));
         super.onPostExecute(jsonObject);
     }
 }
