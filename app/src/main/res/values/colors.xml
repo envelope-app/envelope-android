@@ -43,4 +43,6 @@
 
     <color name="actionbar">#68bcd9</color>
     <color name="search_bg_clr">#b6eafb</color>
+
+    <color name="commentBg">#7c595959</color>
 </resources>

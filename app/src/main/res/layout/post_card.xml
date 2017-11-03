@@ -10,12 +10,11 @@
         android:padding="10dp"
         android:id="@+id/relativeLayout">
 
-        <!--<ImageView
+        <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:src="@mipmap/ic_launcher"/>
-            -->
         <TextView
             android:id="@+id/postid"
             android:layout_width="wrap_content"
@@ -30,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="12dp"
         android:text="23:11"
         android:textSize="9sp"/>
@@ -45,19 +44,22 @@
         android:layout_below="@+id/time" />
 
     <FrameLayout
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:layout_alignBottom="@+id/date"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="24dp"
         android:id="@+id/extendedMenu" >
-
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_alignStart="@+id/extendedMenu"
+            android:layout_alignTop="@+id/extendedMenu"
             android:background="@drawable/postmenu"
             android:contentDescription="menu"
-            android:rotation="90"/>
+            android:rotation="90" />
+
     </FrameLayout>
 
     <TextView
@@ -65,6 +67,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="8dp"
+        android:lineSpacingExtra="4dp"
         android:paddingBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +75,7 @@
         android:layout_below="@+id/relativeLayout"
         android:layout_alignParentStart="true" />
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
@@ -110,15 +113,16 @@
             android:textColor="@color/likecount"
             android:layout_toEndOf="@+id/dislikescount"/>
 
-    </RelativeLayout>
+    </RelativeLayout> -->
 
     <LinearLayout
         android:id="@+id/linearmenu"
-        android:layout_below="@+id/relativeLayout2"
+        android:layout_below="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:weightSum="3">
@@ -126,13 +130,14 @@
             android:id="@+id/likebtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" android:clickable="true">
+            android:layout_weight="1">
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/like"
                 android:id="@+id/likeimg"/>
             <TextView
+                android:id="@+id/likecount"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,32 +155,13 @@
                 android:src="@drawable/comment"
                 android:id="@+id/commentimg"/>
             <TextView
+                android:id="@+id/commentscount"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"
                 android:text="Comment"/>
         </FrameLayout>
-        <FrameLayout
-            android:id="@+id/dislikebtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
-                android:text="Dislike"/>
-
-            <ImageView
-                android:id="@+id/dislikeimg"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/dislike" />
-        </FrameLayout>
-
     </LinearLayout>
 
     <View
@@ -183,5 +169,7 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@color/white_mute"/>
+
+
 
 </RelativeLayout>

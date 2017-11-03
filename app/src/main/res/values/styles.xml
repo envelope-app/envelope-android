@@ -11,7 +11,12 @@
     <style name="Fullscreen" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
     </style>
 
+    <style name="comment">
+        <item name="android:windowEnterAnimation">@anim/comment_open</item>
+        <item name="android:windowExitAnimation">@anim/comment_close</item>
+    </style>
 
 </resources>

@@ -3,9 +3,11 @@ package com.mrinalraj.envelope.network;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.mrinalraj.envelope.activities.HomeActivity;
+import com.mrinalraj.envelope.activities.SplashScreen;
 import com.mrinalraj.envelope.services.PrefManager;
 
 import org.json.JSONObject;
@@ -32,6 +34,11 @@ public class RegisterDevice extends AsyncTask<String,String,JSONObject> {
     protected JSONObject doInBackground(String... params) {
         JSONCustom jsonCustom=new JSONCustom();
         dev_id=params[0];
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         /*try{
             reply=jsonCustom.getJSONObjectFromURL("http://envelope.mrinalraj.com","GET");
             if (hash!=null){
@@ -60,6 +67,7 @@ public class RegisterDevice extends AsyncTask<String,String,JSONObject> {
         }
         */
         c.startActivity(new Intent(c,HomeActivity.class));
+        ((AppCompatActivity)c).finish();
         super.onPostExecute(jsonObject);
     }
 }

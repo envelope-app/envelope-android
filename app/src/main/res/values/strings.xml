@@ -2,4 +2,7 @@
     <string name="app_name">Envelope</string>
     <string name="Device_ID">deviceid</string>
     <string name="demopost">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mollis congue augue eu vulputate. Donec in libero non nibh tempor feugiat non nec mi. Vestibulum ut sodales enim, nec semper lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </string>
+    <string name="rules">
+        1.Do not write any abusive words or use any bad language.\n2.Posts are filtered through our automated Abuse dictionary.\n3.Also if post containing bad language and unfit contents get reported more than 5 times, the Device will be blocked further.\n4.The app keeps the identity anonymous, please help us to keep it the same.
+    </string>
 </resources>

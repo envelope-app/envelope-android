@@ -72,17 +72,12 @@ public class SplashScreen extends AppCompatActivity {
             lat=ls.getLatitude();
             lon=ls.getLongitude();
             if (validateLocation(boundry,new Coordinates(lat,lon))){
-                Toast.makeText(this, "Good to go", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,HomeActivity.class));
-                finish();
+
             }
             else{
                 String devid=GetDeviceID();
-                Toast.makeText(this, devid, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,HomeActivity.class));
-                finish();
-//                RegisterDevice registerDevice=new RegisterDevice(this);
-//                registerDevice.execute(" ");
+                RegisterDevice registerDevice=new RegisterDevice(this);
+                registerDevice.execute(" ");
             }
         }
     }

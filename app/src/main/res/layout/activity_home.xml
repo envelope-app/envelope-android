@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/homeScreenLayout"
     tools:context="com.mrinalraj.envelope.activities.HomeActivity">
 
 <FrameLayout
@@ -34,7 +35,8 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/blankview">
+        android:layout_below="@id/blankview"
+        android:id="@+id/swipe">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,7 +74,7 @@
             android:layout_below="@+id/blankview2"/>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
+            android:id="@+id/toTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -83,9 +85,27 @@
             android:rotation="90"
             app:srcCompat="@drawable/ic_action_navigation_arrow_back" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postContainer"
+            android:padding="10dp">
+
+            <ProgressBar
+                android:id="@+id/loadmore"
+                style="?android:attr/progressBarStyle"
+                android:backgroundTint="@color/actionbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
     </RelativeLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
+
+
 
 
 </RelativeLayout>

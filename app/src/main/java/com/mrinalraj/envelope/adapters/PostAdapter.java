@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mrinalraj.envelope.R;
@@ -22,7 +22,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     public class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        public TextView time,date,postText,likes,dislikes,comments,postID;
+        public TextView time,date,postText,likes,comments,postID;
+        public ImageView likeimg;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -30,20 +31,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             date = (TextView) itemView.findViewById(R.id.date);
             postText = (TextView) itemView.findViewById(R.id.textView4);
             likes = (TextView) itemView.findViewById(R.id.likecount);
-            dislikes = (TextView) itemView.findViewById(R.id.dislikescount);
             comments = (TextView) itemView.findViewById(R.id.commentscount);
             postID = (TextView) itemView.findViewById(R.id.postid);
+            likeimg = (ImageView) itemView.findViewById(R.id.likeimg);
 
             itemView.findViewById(R.id.likebtn).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     listener.onLikeClicked(v,getAdapterPosition());
-                }
-            });
-            itemView.findViewById(R.id.dislikebtn).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onDislikeClicked(v,getAdapterPosition());
                 }
             });
             itemView.findViewById(R.id.commentbtn).setOnClickListener(new View.OnClickListener() {
@@ -80,10 +75,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         holder.time.setText(post.getPost()[0]);
         holder.date.setText(post.getPost()[1]);
         holder.postText.setText(post.getPost()[2]);
-        holder.likes.setText(post.getPost()[3]+ " Likes");
-        holder.dislikes.setText(post.getPost()[4]+ " disliked");
-        holder.comments.setText(post.getPost()[5]+" comments");
-        holder.postID.setText(post.getPost()[6]);
+        holder.likes.setText(post.getPost()[3]);
+        holder.comments.setText(post.getPost()[4]);
+        holder.postID.setText(post.getPost()[5]);
+        holder.likeimg.setImageResource(post.getLikeimg());
     }
 
     @Override
@@ -93,7 +88,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     public interface PostAdapterListener{
         void onLikeClicked(View v,int position);
-        void onDislikeClicked(View v,int position);
         void onCommentClicked(View v,int position);
         void onExtendedMenuClicked(View v,int position);
     }
